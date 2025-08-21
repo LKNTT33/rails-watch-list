@@ -1,0 +1,11 @@
+<h1>Add a new list</h1>
+<p>Create your dedicated list</p>
+<%= simple_form_for(@list) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<div>
+<%= link_to "Back to movie lists",  lists_path %>
+</div>
