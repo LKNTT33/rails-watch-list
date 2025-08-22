@@ -1,5 +1,16 @@
 <h1><%= @list.name %></h1>
 
+<p><strong>Bookmarks</strong></p>
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item">
+      <%= bookmark.comment %>
+      <%= bookmark.comment %>
+      </li>
+  <% end %>
+</ul>
+<br>
+
 <div>
   <%= link_to "Add a new bookmark", new_list_bookmark_path(@list.id) %>
 </div>

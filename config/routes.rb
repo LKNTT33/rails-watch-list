@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   # US: As a user, I can destroy a bookmark > destroy
   resources :bookmarks, only: [:destroy]
+  # delete "lists/:list_id/bookmarks/:id", to "bookmarks#destroy", as: :delete_bookmark
 end
