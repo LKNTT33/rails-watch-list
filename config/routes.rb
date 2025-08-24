@@ -7,15 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root to: "lists#index"
 
   # US: As a user, I can see all my movie lists => index
   # US: As a user, I can create a movie list => new + create
   # US: As a user, I can see the details of a movie list => show
-  resources :lists, only: [:index, :show, :new, :create] do
+  resources :lists, only: [:index, :show, :new, :create, :destroy] do
     resources :bookmarks, only: [:new, :create]
   end
-
-  # US: As a user, I can destroy a bookmark > destroy
   resources :bookmarks, only: [:destroy]
-  # delete "lists/:list_id/bookmarks/:id", to "bookmarks#destroy", as: :delete_bookmark
 end
